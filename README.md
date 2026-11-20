@@ -75,9 +75,14 @@ LalalalalLalLLLalalalala
 
 ```sh
 cd app
-make build
-bin/main.exe test/c/test_file_csq_ok.txt
+make                                         # builds bin/main and bin/tester
+make run FILE=test/c/test_file_csq_ok.txt    # or: bin/main <file>
+make test                                    # runs every capture in test/
+make clean
 ```
+
+`make test` expects files with `nok` or `not_ok` in their name to be rejected
+and every other file to parse, and exits non-zero if any file does otherwise.
 
 Each complete response is printed with its status and data lines:
 

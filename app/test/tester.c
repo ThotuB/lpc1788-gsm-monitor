@@ -3,7 +3,8 @@
 
 #include "../lib/parser.h"
 
-void parse(FILE* file) {
+// Returns EXIT_SUCCESS if every response in the file parsed completely.
+int parse(FILE* file) {
     int current_char;
     STATE_MACHINE_RETURN_VALUE result = STATE_MACHINE_READY;
     while ((current_char = fgetc(file)) != EOF) {
@@ -14,7 +15,7 @@ void parse(FILE* file) {
                 break;
             }
             case STATE_MACHINE_ERROR: {
-                return;
+                return EXIT_FAILURE;
             }
             case STATE_MACHINE_NOT_READY:
                 break;
@@ -22,23 +23,27 @@ void parse(FILE* file) {
     }
     if (result == STATE_MACHINE_NOT_READY) {
         printf("error: incomplete response at end of file\n");
+        return EXIT_FAILURE;
     }
+    return EXIT_SUCCESS;
 }
 
 int main(int argc, char* argv[]) {
-    if (argc < 2) {
-        printf("error: no file specified\n");
-        printf("usage: ./main.exe file.txt\n");
-        printf("                  ^^^^^^^^\n");
+    if (argc != 2) {
+        printf("usage: ./tester file.txt\n");
         return EXIT_FAILURE;
     }
 
     const char* filename = argv[1];
     FILE* file = fopen(filename, "r");
 
-    if (file) {
-        parse(file);
-        fclose(file);
+    if (!file) {
+        printf("error: could not open file %s\n", filename);
+        return EXIT_FAILURE;
     }
-    return 0;
+
+    int status = parse(file);
+    fclose(file);
+
+    return status;
 }

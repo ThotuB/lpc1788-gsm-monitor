@@ -2,91 +2,84 @@
 # AUTOBAUD Commands
 ## AT Command
 
-<font face="Cascadia Code" size="4">
-    Transmit:<br>
-    AT<br><br>
-    Receive:<br>
-    &ltCR&gt&ltLF&gt<br>
-    OK&ltCR&gt&ltLF&gt
-</font>
+```
+< AT
+
+> <CR><LF>
+> OK<CR><LF>
+```
 
 ## Error Command
 
-<font face="Cascadia Code" size="4">
-    Transmit:<br>
-    AT+<br><br>
-    Receive:<br>
-    &ltCR&gt&ltLF&gt<br>
-    ERROR&ltCR&gt&ltLF&gt
-</font>
+```
+< AT+
+
+> <CR><LF>
+> ERROR<CR><LF>
+```
 
 ## RSSI Value in ASU
 
-<font face="Cascadia Code" size="4">
-    Transmit:<br>
-    AT+CSQ<br><br>
-    Receive:<br>
-    &ltCR&gt&ltLF&gt<br>
-    +CSQ: 31,99&ltCR&gt&ltLF&gt<br>
-    &ltCR&gt&ltLF&gt<br>
-    OK&ltCR&gt&ltLF&gt
-</font>
+```
+< AT+CSQ
+
+> <CR><LF>
+> +CSQ: 31,99<CR><LF>
+> <CR><LF>
+> OK<CR><LF>
+```
 
 ## Status of Network Registration
 
-<font face="Cascadia Code" size="4">
-    Transmit:<br>
-    AT+CREG?<br><br>
-    Receive:<br>
-    &ltCR&gt&ltLF&gt<br>
-    +CREG: 0,1&ltCR&gt&ltLF&gt<br>
-    &ltCR&gt&ltLF&gt<br>
-    OK&ltCR&gt&ltLF&gt
-</font>
+```
+< AT+CREG?
+
+> <CR><LF>
+> +CREG: 0,1<CR><LF>
+> <CR><LF>
+> OK<CR><LF>
+```
 
 ## Selected Network Operator
 
-<font face="Cascadia Code" size="4">
-    Transmit:<br>
-    AT+COPS?<br><br>
-    Receive:<br>
-    &ltCR&gt&ltLF&gt<br>
-    +COPS: 0,0,"Idea"&ltCR&gt&ltLF&gt<br>
-    &ltCR&gt&ltLF&gt<br>
-    OK&ltCR&gt&ltLF&gt
-</font>
+```
+< AT+COPS?
+
+> <CR><LF>
+> +COPS: 0,0,"Idea"<CR><LF>
+> <CR><LF>
+> OK<CR><LF>
+```
 
 ## List of Network Operators
 
-<font face="Cascadia Code" size="4">
-    Transmit:<br>
-    AT+COPN<br><br>
-    Receive:<br>
-    &ltCR&gt&ltLF&gt<br>
-    +COPN: "001010","Test PA128-PA4"&ltCR&gt&ltLF&gt<br>
-    +COPN: "00101","Test PA128-PA4"&ltCR&gt&ltLF&gt<br>
-    +COPN: "20201","GR COSMOTE"&ltCR&gt&ltLF&gt<br>
-    +COPN: "20205","vodafone GR"&ltCR&gt&ltLF&gt<br>
-    +COPN: "310160","T-Mobile"&ltCR&gt&ltLF&gt<br>
-    +COPN: "31016","T-Mobile"&ltCR&gt&ltLF&gt<br>
-    +COPN: "310170","AT&T"&ltCR&gt&ltLF&gt<br>
-    +COPN: "356110","C&W"&ltCR&gt&ltLF&gt<br>
-    +COPN: "90115","OnAir"&ltCR&gt&ltLF&gt<br>
-    +COPN: "90117","Navitas1"&ltCR&gt&ltLF&gt<br>
-    +COPN: "90118","Maritime Wireless"&ltCR&gt&ltLF&gt<br>
-    ...<br>
-    &ltCR&gt&ltLF&gt<br>
-    OK&ltCR&gt&ltLF&gt
-</font>
+```
+< AT+COPN
+
+> <CR><LF>
+> +COPN: "001010","Test PA128-PA4"<CR><LF>
+> +COPN: "00101","Test PA128-PA4"<CR><LF>
+> +COPN: "20201","GR COSMOTE"<CR><LF>
+> +COPN: "20205","vodafone GR"<CR><LF>
+> +COPN: "310160","T-Mobile"<CR><LF>
+> +COPN: "31016","T-Mobile"<CR><LF>
+> +COPN: "310170","AT&T"<CR><LF>
+> +COPN: "356110","C&W"<CR><LF>
+> +COPN: "90115","OnAir"<CR><LF>
+> +COPN: "90117","Navitas1"<CR><LF>
+> +COPN: "90118","Maritime Wireless"<CR><LF>
+> ...
+> <CR><LF>
+> OK<CR><LF>
+```
 
 ## IMEI
 
-<font face="Cascadia Code" size="4">
-    Transmit:<br>
-    AT+CGSN<br><br>
-    Receive:<br>
-    &ltCR&gt&ltLF&gt<br>
-    359357080000000&ltCR&gt&ltLF&gt<br>
-    &ltCR&gt&ltLF&gt<br>
-    OK&ltCR&gt&ltLF&gt
-</font>
+```
+< AT+CGSN
+
+> <CR><LF>
+> 359357080000000<CR><LF>
+> <CR><LF>
+> OK<CR><LF>
+```

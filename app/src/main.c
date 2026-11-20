@@ -28,12 +28,12 @@ void parse(FILE* file) {
 int main(int argc, char* argv[]) {
     if (argc < 2) {
         printf("error: no file specified\n");
-        printf("usage: ./main.exe file.txt\n");
-        printf("                  ^^^^^^^^\n");
+        printf("usage: ./main file.txt\n");
+        printf("              ^^^^^^^^\n");
         return EXIT_FAILURE;
     } else if (argc > 2) {
         printf("error: too many arguments\n");
-        printf("usage: ./main.exe file.txt\n");
+        printf("usage: ./main file.txt\n");
         return EXIT_FAILURE;
     }
 
