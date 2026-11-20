@@ -1,12 +1,14 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include "../lib/Parser.h"
+#include "../lib/parser.h"
 
 void parse(FILE* file) {
-    char current_char;
+    int current_char;
+    STATE_MACHINE_RETURN_VALUE result = STATE_MACHINE_READY;
     while ((current_char = fgetc(file)) != EOF) {
-        switch (parse_char(current_char)) {
+        result = parse_char(current_char);
+        switch (result) {
             case STATE_MACHINE_READY: {
                 print_data();
                 break;
@@ -17,6 +19,9 @@ void parse(FILE* file) {
             case STATE_MACHINE_NOT_READY:
                 break;
         }
+    }
+    if (result == STATE_MACHINE_NOT_READY) {
+        printf("error: incomplete response at end of file\n");
     }
 }
 

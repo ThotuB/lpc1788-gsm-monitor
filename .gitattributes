@@ -1,0 +1,5 @@
+# Modem captures must keep <CR><LF> line endings on every platform.
+app/test/**/*.txt text eol=crlf
+
+# Deliberately has no <CR> characters; store and check out byte-for-byte.
+app/test/c/test_file_csq_not_ok_4_no_cr_present.txt -text

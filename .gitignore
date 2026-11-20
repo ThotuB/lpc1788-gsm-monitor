@@ -1,0 +1,20 @@
+# PC build
+app/bin/
+
+# Keil build output
+keil/output/
+keil/list/
+keil/*.plg
+keil/*.tra
+keil/*.dep
+keil/*.sct
+
+# Keil per-user IDE state and backups
+keil/*.uvgui.*
+keil/*.bak
+
+# Debugger logs
+keil/JLinkLog.txt
+
+# Tool binaries
+keil/doxygen.exe
